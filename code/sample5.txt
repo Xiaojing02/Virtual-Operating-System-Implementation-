@@ -1,0 +1,396 @@
+23   // line one
+
+13
+
+23   // line two 
+
+22
+
+23   // line three 
+
+57
+
+23   // line four 
+
+84
+23   // line five 
+
+101
+23 //line six
+
+128
+50
+
+      
+
+      // line one
+
+1    ld 6
+6         
+
+27   push
+
+23   call dash 
+
+151
+
+28   remove parm 
+
+23   call newline
+
+193
+24   return
+
+      
+
+       // line two
+1   ld 124
+124 print |
+9
+2      
+1
+ ld 1    // print space and @
+1
+ 
+27 push
+23
+ call space
+179 //print 1 space
+28
+1
+1
+27
+23
+165 //print 1 @
+28
+1
+ ld 1       // print space and @
+1
+ 
+27 push
+23
+ call space
+179 //print 1 space
+28
+1
+1
+27
+23
+165 //print 1 @
+28
+1    //print |
+124
+9
+2
+23   call newline
+
+193
+24   return
+
+ 
+
+      // line three
+
+1   ld 124
+124 print |
+9
+2
+1   ld 2
+2
+27  push
+23  call space
+179
+28
+1    ld asterisk
+
+42
+
+9    output
+
+2
+1    ld 1
+
+1
+
+27  push
+23  call spaces
+179
+28
+1   ld 124
+124 print |
+9
+2
+23   call newline
+
+193
+24   return
+
+
+
+      // line four 
+
+1    load | 
+
+124
+
+9    put
+
+2
+
+1    ld 4
+
+4        
+
+27   push
+
+23   call spaces 
+
+179
+28   remove parm 
+
+1    load | 
+
+124
+
+9    put
+
+2
+
+23   call newline
+
+193
+
+24   return
+
+
+
+      // line five
+
+1   ld 124
+124 print |
+9
+2
+1    ld 2
+
+2         
+
+27   push
+
+23   call spaces 
+
+179
+28   remove parm
+1    load # 
+
+35    
+
+9
+
+2
+
+1    ld 1
+
+1         
+
+27   push
+
+23   call spaces 
+
+179
+
+28   remove parm
+1   ld 124
+124 print |
+9
+2
+23   call newline
+
+193
+
+24   return
+
+
+
+
+      // line six
+
+1    ld 6
+6         
+
+27   push
+
+23   call dash 
+
+151
+
+28   remove parm 
+
+23   call newline
+
+193
+
+24   return
+
+ 
+
+
+      // print |
+
+1    ld 1
+
+1 
+
+14   CopyToX
+
+6     LoadSpX  - get parm
+
+14   CopyToX
+
+1    ld -
+
+124
+
+9    output
+
+2
+
+26   decX
+
+15   CopyFromX
+
+22   JNE 142
+142
+
+24
+
+
+      // print dash 
+
+1    ld 1
+
+1 
+
+14   CopyToX
+
+6     LoadSpX  - get parm
+
+14   CopyToX
+
+1    ld -
+
+45
+
+9    output
+
+2
+
+26   decX
+
+15   CopyFromX
+
+22   JNE 156
+156
+24
+
+
+
+      // print @ 
+
+1    ld 1
+
+1 
+
+14   CopyToX
+
+6     LoadSpX  - get parm
+
+14   CopyToX
+
+1    ld _
+
+64
+9    output
+
+2
+
+26   decX
+
+15   CopyFromX
+
+22   JNE 170
+170
+
+24
+
+
+
+      // print space 
+
+1    ld 1
+
+1 
+
+14   CopyToX
+
+6    LoadSpX  - get parm
+
+14   CopyToX
+
+1    ld ' ' 
+
+32
+
+9    output
+
+2
+
+26   decX
+
+15   CopyFromX
+
+22   JNE 184
+
+184
+
+24
+
+
+
+      // print newline 
+
+1
+
+10
+
+9
+
+2
+
+24
+
+      // print -* 
+
+1     ld dash 
+
+45       
+
+9    output
+
+2
+
+1    ld asterisk
+
+42    
+
+9    output
+
+2
+
+24   return
+
+
+
+
+.1000
+
+30   interrupt handler - just return
